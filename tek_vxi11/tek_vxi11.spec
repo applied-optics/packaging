@@ -1,4 +1,4 @@
-Name:       tek
+Name:       tek_vxi11
 Version:    1.04
 Release:    1
 
@@ -8,7 +8,7 @@ Group:      Hardware/Other
 BuildRoot:  %{_tmppath}/%{name}-%{version}-build
 
 URL:        http://optics.eee.nottingham.ac.uk
-Source:     https://github.com/applied-optics/tek/archive/v%{version}.tar.gz
+Source:     https://github.com/applied-optics/tek_vxi11/archive/v%{version}.tar.gz
 
 Summary:    RPC protocol for communicating with tektronix instruments over ethernet.
 
