@@ -1,10 +1,10 @@
-Index: vxi11/config.mk
-===================================================================
---- vxi11.orig/config.mk	2015-06-26 11:06:13.150343000 +0100
-+++ vxi11/config.mk	2015-06-26 11:06:13.129090000 +0100
-@@ -7,3 +7,5 @@
+--- a/config.mk
++++ b/config.mk
+@@ -7,3 +7,7 @@
  prefix=/usr/local
  
  SOVERSION=1
 +
-+LIB_SUFFIX=/x86_64-linux-gnu
++DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
++LIB_SUFFIX=/${DEB_HOST_MULTIARCH}
++
