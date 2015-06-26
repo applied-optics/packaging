@@ -1,0 +1,50 @@
+Source: vxi11
+Section: net
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Roger A. Light <roger@atchoo.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://github.com/applied-optics/vxi11
+Vcs-Git: http://github.com/applied-optics/vxi11
+Vcs-Browser: https://github.com/applied-optics/vxi11
+
+Package: libvxi11-1
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: library for communicating with ethernet/vxi11 enabled instruments
+ This library provides support for the vxi11 protocol, used to provide control
+ and data acquisition capabilities on ethernet-enabled instruments such as
+ oscilloscopes, logic analysers and function generators from a wide range of
+ manufacturers.
+
+Package: libvxi11-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, libvxi11-1 (>= ${source:Version}), libvxi11-1 (<< ${source:Version}.1~)
+Description: vxi11 communication library, development files
+ This is the header file for the libvxi11-1 C library, which is a library that
+ provides support for the vxi11 protocol for controlling instruments such as
+ oscilloscopes, logic analysers and function generators. This package is needed
+ to do development with libvxi11.
+
+Package: vxi11-utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libvxi11-1 (= ${binary:Version})
+Description: vxi11 command line utilities
+ This package contains the vxi11_cmd and vxi11_send utilities, for controlling
+ vxi11 enabled instruments such as oscilloscopes, logic analysers and function
+ generators.
+
+Package: vxi11-dbg
+Architecture: any
+Priority: extra
+Section: debug
+Depends: ${misc:Depends}, libvxi11-1 (= ${binary:Version}) | vxi11-utils (= ${binary:Version})
+Description: debugging symbols for vxi11 binaries
+ This package contains debugging files used to investigate problems with
+ the binaries provided by the packages libvxi11-1 and vxi11-utils.

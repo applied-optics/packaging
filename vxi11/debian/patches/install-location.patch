@@ -1,0 +1,13 @@
+Index: vxi11/config.mk
+===================================================================
+--- vxi11.orig/config.mk	2015-06-26 11:06:19.108299000 +0100
++++ vxi11/config.mk	2015-06-26 11:06:19.088715000 +0100
+@@ -4,7 +4,7 @@
+ INSTALL=install
+ MAKE=make
+ 
+-prefix=/usr/local
++prefix=/usr
+ 
+ SOVERSION=1
+ 
